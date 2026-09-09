@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Web Maintenance</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<style>
+
+/* =========================
+   LUXURY RESET
+========================= */
+
+*,
+*::before,
+*::after {
+
+    box-sizing:border-box;
+
+}
+
+
+html,body {
+
+    width:100%;
+    min-height:100%;
+
+}
+
+
+body {
+
+    margin:0;
+
+    font-family:
+    "Inter",
+    "Segoe UI",
+    serif;
+
+
+    color:#2b2418;
+
+
+    overflow-x:hidden;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fffaf0,
+        #f6ead7,
+        #e9d3a5
+    );
+
+
+}
+
+
+/* =========================
+   LUXURY LIGHT EFFECT
+========================= */
+
+
+body::before {
+
+
+content:"";
+
+
+position:fixed;
+
+
+width:500px;
+
+height:500px;
+
+
+top:-200px;
+
+right:-150px;
+
+
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(212,175,55,.45),
+
+transparent 70%
+
+);
+
+
+
+filter:blur(30px);
+
+
+
+animation:
+
+luxuryGlow 8s infinite alternate;
+
+
+
+z-index:0;
+
+
+}
+
+
+
+
+body::after {
+
+
+content:"";
+
+
+position:fixed;
+
+
+width:400px;
+
+height:400px;
+
+
+bottom:-150px;
+
+left:-100px;
+
+
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,255,255,.9),
+
+transparent 70%
+
+);
+
+
+
+animation:
+
+luxuryGlow 10s infinite alternate-reverse;
+
+
+
+z-index:0;
+
+
+}
+
+
+
+@keyframes luxuryGlow {
+
+
+from {
+
+transform:
+translate(0,0)
+scale(1);
+
+}
+
+
+to {
+
+
+transform:
+translate(40px,30px)
+scale(1.2);
+
+
+}
+
+}
+
+
+
+
+
+/* =========================
+   PAGE
+========================= */
+
+
+.page {
+
+
+position:relative;
+
+
+z-index:2;
+
+
+min-height:100vh;
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+padding:
+
+clamp(15px,5vw,50px);
+
+
+}
+
+
+
+
+
+/* =========================
+   PREMIUM CARD
+========================= */
+
+
+.maintenance-card {
+
+
+width:100%;
+
+
+max-width:780px;
+
+
+
+background:
+
+rgba(255,255,255,.75);
+
+
+
+backdrop-filter:
+
+blur(15px);
+
+
+
+border:
+
+1px solid rgba(212,175,55,.35);
+
+
+
+border-radius:
+
+24px;
+
+
+
+padding:
+
+clamp(30px,7vw,65px);
+
+
+
+text-align:center;
+
+
+
+box-shadow:
+
+
+0 25px 60px rgba(80,60,20,.18);
+
+
+
+animation:
+
+luxuryAppear .8s ease;
+
+
+}
+
+
+
+@keyframes luxuryAppear {
+
+
+from {
+
+opacity:0;
+
+transform:
+translateY(30px);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+
+}
+
+
+
+
+
+/* =========================
+   ICON
+========================= */
+
+
+.maintenance-icon {
+
+
+width:
+
+100px;
+
+
+height:
+
+100px;
+
+
+margin:
+
+auto;
+
+
+
+display:flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+
+border-radius:50%;
+
+
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#d4af37,
+
+#f7e7a9
+
+);
+
+
+
+color:#fff;
+
+
+
+box-shadow:
+
+0 15px 35px rgba(212,175,55,.4);
+
+
+
+animation:
+
+softPulse 3s infinite;
+
+
+
+}
+
+
+
+.maintenance-icon i {
+
+
+font-size:
+
+42px;
+
+
+}
+
+
+
+
+@keyframes softPulse {
+
+
+50% {
+
+
+transform:
+
+scale(1.08);
+
+
+}
+
+
+}
+
+
+
+
+/* =========================
+   BADGE
+========================= */
+
+
+.badge {
+
+
+display:inline-flex;
+
+
+
+margin-top:30px;
+
+
+
+padding:
+
+8px 20px;
+
+
+
+border-radius:
+
+50px;
+
+
+
+background:
+
+#1b1b1b;
+
+
+
+color:
+
+#d4af37;
+
+
+
+font-size:
+
+12px;
+
+
+
+font-weight:700;
+
+
+
+letter-spacing:
+
+2px;
+
+
+
+text-transform:
+
+uppercase;
+
+
+
+}
+
+
+
+
+.badge-dot {
+
+
+width:8px;
+
+
+height:8px;
+
+
+
+background:#d4af37;
+
+
+
+border-radius:50%;
+
+
+
+margin-right:8px;
+
+
+
+box-shadow:
+
+0 0 10px #d4af37;
+
+
+
+}
+
+
+
+
+/* =========================
+   TITLE
+========================= */
+
+
+h1 {
+
+
+margin:
+
+25px 0 15px;
+
+
+
+font-family:
+
+Georgia,
+"Times New Roman",
+serif;
+
+
+
+font-size:
+
+clamp(38px,8vw,68px);
+
+
+
+font-weight:700;
+
+
+
+letter-spacing:
+
+-2px;
+
+
+
+color:#1c160c;
+
+
+
+}
+
+
+
+.subtitle {
+
+
+max-width:
+
+600px;
+
+
+
+margin:
+
+auto;
+
+
+
+font-size:
+
+clamp(14px,3vw,17px);
+
+
+
+line-height:
+
+1.8;
+
+
+
+color:#66563c;
+
+
+
+}
+
+
+
+/* =========================
+   TIMER
+========================= */
+
+
+.timer-title {
+
+
+margin-top:35px;
+
+
+
+font-size:
+
+12px;
+
+
+
+letter-spacing:
+
+3px;
+
+
+
+font-weight:700;
+
+
+
+color:#8c6b1f;
+
+
+
+text-transform:
+
+uppercase;
+
+
+
+}
+
+
+
+.countdown {
+
+
+display:grid;
+
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+
+
+gap:
+
+15px;
+
+
+
+margin-top:20px;
+
+
+
+}
+
+
+
+.time-box {
+
+
+background:
+
+linear-gradient(
+
+145deg,
+
+#fff,
+
+#f7ecd2
+
+);
+
+
+
+border:
+
+1px solid rgba(212,175,55,.5);
+
+
+
+border-radius:
+
+16px;
+
+
+
+padding:
+
+20px 8px;
+
+
+
+box-shadow:
+
+0 10px 25px rgba(80,60,20,.12);
+
+
+
+}
+
+
+
+.time-number {
+
+
+display:block;
+
+
+
+font-family:
+
+Georgia,
+serif;
+
+
+
+font-size:
+
+clamp(26px,7vw,45px);
+
+
+
+font-weight:bold;
+
+
+
+color:#1d160a;
+
+
+
+}
+
+
+
+.time-label {
+
+
+margin-top:8px;
+
+
+
+font-size:
+
+10px;
+
+
+
+letter-spacing:
+
+2px;
+
+
+
+color:#9b7a35;
+
+
+
+text-transform:
+
+uppercase;
+
+
+
+}
+
+
+
+/* =========================
+   WHATSAPP PREMIUM BUTTON
+========================= */
+
+
+.whatsapp-btn {
+
+
+margin-top:35px;
+
+
+
+display:flex;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+
+gap:12px;
+
+
+
+padding:
+
+16px 25px;
+
+
+
+width:100%;
+
+
+
+max-width:350px;
+
+
+
+margin-left:auto;
+
+
+margin-right:auto;
+
+
+
+background:
+
+#1c1c1c;
+
+
+
+color:#d4af37;
+
+
+
+border-radius:
+
+50px;
+
+
+
+text-decoration:none;
+
+
+
+font-weight:700;
+
+
+
+letter-spacing:.5px;
+
+
+
+border:
+
+1px solid #d4af37;
+
+
+
+transition:.3s;
+
+
+
+}
+
+
+
+.whatsapp-btn:hover {
+
+
+background:#d4af37;
+
+
+color:#1c1c1c;
+
+
+
+transform:
+
+translateY(-3px);
+
+
+}
+
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+.footer {
+
+
+margin-top:40px;
+
+
+
+padding-top:20px;
+
+
+
+border-top:
+
+1px solid rgba(212,175,55,.3);
+
+
+
+}
+
+
+
+.footer-text {
+
+
+font-size:
+
+10px;
+
+
+
+letter-spacing:
+
+1px;
+
+
+
+color:#8c7650;
+
+
+
+}
+
+
+
+.footer-text a {
+
+
+color:#8c6b1f;
+
+
+
+text-decoration:none;
+
+
+
+}
+
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:480px){
+
+
+.maintenance-card {
+
+
+border-radius:18px;
+
+
+padding:
+
+30px 18px;
+
+
+}
+
+
+
+.countdown {
+
+
+gap:8px;
+
+
+}
+
+
+
+.time-box {
+
+
+padding:
+
+15px 5px;
+
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="page">
+
+
+<section class="maintenance-card">
+
+
+<!-- ICON -->
+
+<div class="maintenance-icon">
+
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+</div>
+
+
+<!-- STATUS -->
+
+<div class="badge">
+
+    <span class="badge-dot"></span>
+
+    Website Maintenance
+
+</div>
+
+
+<!-- TITLE -->
+
+<h1>
+
+    Web Maintenance
+
+</h1>
+
+
+<p class="subtitle">
+
+    Website sedang dalam proses pemeliharaan dan peningkatan sistem.
+    Kami sedang melakukan beberapa pembaruan agar layanan dapat
+    kembali berjalan dengan lebih baik dan optimal.
+
+</p>
+
+
+<!-- TIMER -->
+
+<div class="timer-title">
+
+    Perkiraan website kembali online dalam
+
+</div>
+
+
+<div class="countdown">
+
+
+    <div class="time-box">
+
+        <span
+            class="time-number"
+            id="days">
+            00
+        </span>
+
+        <span class="time-label">
+            Hari
+        </span>
+
+    </div>
+
+
+    <div class="time-box">
+
+        <span
+            class="time-number"
+            id="hours">
+            00
+        </span>
+
+        <span class="time-label">
+            Jam
+        </span>
+
+    </div>
+
+
+    <div class="time-box">
+
+        <span
+            class="time-number"
+            id="minutes">
+            00
+        </span>
+
+        <span class="time-label">
+            Menit
+        </span>
+
+    </div>
+
+
+    <div class="time-box">
+
+        <span
+            class="time-number"
+            id="seconds">
+            00
+        </span>
+
+        <span class="time-label">
+            Detik
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<!-- CONTACT -->
+
+<div class="contact">
+
+    <div class="contact-text">
+
+        Butuh bantuan atau informasi lebih lanjut?
+
+    </div>
+
+
+    <a
+        class="whatsapp-btn"
+        href="https://wa.me/6281234567899"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        Hubungi Admin
+
+    </a>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-text">
+
+        Developed by:         
+		<a
+            href="https://example.com"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            WasobiTech
+
+        </a>
+
+    </div>
+
+</footer>
+
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+/* ==========================================
+   COUNTDOWN MAINTENANCE
+========================================== */
+
+/*
+   GANTI TANGGAL DI BAWAH INI.
+
+   Format:
+   YYYY-MM-DDTHH:MM:SS
+
+   Contoh:
+   2026-10-12T08:00:00
+*/
+
+const maintenanceEnd =
+    new Date("2026-10-12T08:00:00").getTime();
+
+
+
+function updateCountdown() {
+
+
+    const now =
+        new Date().getTime();
+
+
+    const distance =
+        maintenanceEnd - now;
+
+
+    /* Jika waktu sudah selesai */
+
+    if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        document.querySelector(".timer-title")
+            .textContent =
+            "Maintenance telah selesai";
+
+        return;
+
+    }
+
+
+    /* Perhitungan waktu */
+
+    const days =
+        Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance %
+            (1000 * 60))
+            /
+            1000
+        );
+
+
+    /* Tampilkan */
+
+    document.getElementById("days")
+        .textContent =
+        String(days).padStart(2, "0");
+
+
+    document.getElementById("hours")
+        .textContent =
+        String(hours).padStart(2, "0");
+
+
+    document.getElementById("minutes")
+        .textContent =
+        String(minutes).padStart(2, "0");
+
+
+    document.getElementById("seconds")
+        .textContent =
+        String(seconds).padStart(2, "0");
+
+}
+
+
+/* Jalankan */
+
+updateCountdown();
+
+
+/* Update setiap detik */
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+</script>
+
+
+</body>
+</html>
+```
