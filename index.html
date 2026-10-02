@@ -31,17 +31,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 }
 
 
-html,body {
-
-    width:100%;
-    min-height:100%;
-
-}
-
-
 body {
 
     margin:0;
+
+    min-height:100vh;
+
 
     font-family:
     "Inter",
@@ -49,27 +44,40 @@ body {
     serif;
 
 
-    color:#2b2418;
+    color:#f8f4ea;
+
+
+    background:
+
+    radial-gradient(
+        circle at top left,
+        rgba(212,175,55,.25),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at bottom right,
+        rgba(255,255,255,.08),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        135deg,
+        #050505,
+        #101820,
+        #1b1b1b
+    );
 
 
     overflow-x:hidden;
 
 
-    background:
-
-    linear-gradient(
-        135deg,
-        #fffaf0,
-        #f6ead7,
-        #e9d3a5
-    );
-
-
 }
 
 
+
 /* =========================
-   LUXURY LIGHT EFFECT
+   GOLD LIGHT ANIMATION
 ========================= */
 
 
@@ -84,40 +92,35 @@ position:fixed;
 
 width:500px;
 
+
 height:500px;
-
-
-top:-200px;
-
-right:-150px;
 
 
 
 background:
 
 radial-gradient(
-
 circle,
-
-rgba(212,175,55,.45),
-
-transparent 70%
-
+rgba(212,175,55,.25),
+transparent 65%
 );
 
 
 
-filter:blur(30px);
+top:-200px;
+
+right:-200px;
 
 
 
 animation:
 
-luxuryGlow 8s infinite alternate;
+luxuryGlow 12s infinite alternate;
 
 
 
 z-index:0;
+
 
 
 }
@@ -134,34 +137,33 @@ content:"";
 position:fixed;
 
 
-width:400px;
-
-height:400px;
+width:350px;
 
 
-bottom:-150px;
-
-left:-100px;
+height:350px;
 
 
 
 background:
 
 radial-gradient(
-
 circle,
-
-rgba(255,255,255,.9),
-
+rgba(255,255,255,.12),
 transparent 70%
-
 );
+
+
+
+bottom:-150px;
+
+
+left:-150px;
 
 
 
 animation:
 
-luxuryGlow 10s infinite alternate-reverse;
+luxuryGlow 15s infinite alternate-reverse;
 
 
 
@@ -172,30 +174,28 @@ z-index:0;
 
 
 
+
 @keyframes luxuryGlow {
 
 
 from {
 
 transform:
-translate(0,0)
-scale(1);
+translate(0,0);
 
 }
+
 
 
 to {
 
-
 transform:
-translate(40px,30px)
-scale(1.2);
-
+translate(80px,60px);
 
 }
 
-}
 
+}
 
 
 
@@ -214,6 +214,7 @@ position:relative;
 z-index:2;
 
 
+
 min-height:100vh;
 
 
@@ -228,7 +229,7 @@ justify-content:center;
 
 padding:
 
-clamp(15px,5vw,50px);
+25px;
 
 
 }
@@ -236,9 +237,8 @@ clamp(15px,5vw,50px);
 
 
 
-
 /* =========================
-   PREMIUM CARD
+   LUXURY CARD
 ========================= */
 
 
@@ -252,15 +252,15 @@ max-width:780px;
 
 
 
+padding:
+
+clamp(30px,6vw,60px);
+
+
+
 background:
 
-rgba(255,255,255,.75);
-
-
-
-backdrop-filter:
-
-blur(15px);
+rgba(255,255,255,.06);
 
 
 
@@ -272,24 +272,23 @@ border:
 
 border-radius:
 
-24px;
+22px;
 
 
 
-padding:
+backdrop-filter:
 
-clamp(30px,7vw,65px);
-
-
-
-text-align:center;
+blur(20px);
 
 
 
 box-shadow:
 
+0 30px 80px rgba(0,0,0,.55);
 
-0 25px 60px rgba(80,60,20,.18);
+
+
+text-align:center;
 
 
 
@@ -299,6 +298,7 @@ luxuryAppear .8s ease;
 
 
 }
+
 
 
 
@@ -313,6 +313,7 @@ transform:
 translateY(30px);
 
 }
+
 
 
 to {
@@ -330,7 +331,6 @@ translateY(0);
 
 
 
-
 /* =========================
    ICON
 ========================= */
@@ -341,17 +341,15 @@ translateY(0);
 
 width:
 
-100px;
+95px;
 
 
 height:
 
-100px;
+95px;
 
 
-margin:
-
-auto;
+margin:auto;
 
 
 
@@ -372,34 +370,46 @@ border-radius:50%;
 background:
 
 linear-gradient(
-
 135deg,
-
 #d4af37,
-
-#f7e7a9
-
+#f8e7a2
 );
 
 
 
-color:#fff;
+color:#111;
 
 
 
 box-shadow:
 
-0 15px 35px rgba(212,175,55,.4);
+0 0 40px rgba(212,175,55,.45);
 
 
 
 animation:
 
-softPulse 3s infinite;
-
+goldPulse 3s infinite;
 
 
 }
+
+
+
+@keyframes goldPulse {
+
+
+50% {
+
+transform:
+scale(1.06);
+
+}
+
+
+}
+
+
 
 
 
@@ -409,25 +419,6 @@ softPulse 3s infinite;
 font-size:
 
 42px;
-
-
-}
-
-
-
-
-@keyframes softPulse {
-
-
-50% {
-
-
-transform:
-
-scale(1.08);
-
-
-}
 
 
 }
@@ -446,87 +437,38 @@ scale(1.08);
 display:inline-flex;
 
 
-
 margin-top:30px;
-
 
 
 padding:
 
-8px 20px;
+9px 18px;
 
 
 
-border-radius:
-
-50px;
+border-radius:50px;
 
 
 
-background:
+border:
 
-#1b1b1b;
-
-
-
-color:
-
-#d4af37;
+1px solid rgba(212,175,55,.5);
 
 
 
-font-size:
-
-12px;
+color:#d4af37;
 
 
 
-font-weight:700;
+font-size:12px;
 
 
 
-letter-spacing:
-
-2px;
+letter-spacing:3px;
 
 
 
-text-transform:
-
-uppercase;
-
-
-
-}
-
-
-
-
-.badge-dot {
-
-
-width:8px;
-
-
-height:8px;
-
-
-
-background:#d4af37;
-
-
-
-border-radius:50%;
-
-
-
-margin-right:8px;
-
-
-
-box-shadow:
-
-0 0 10px #d4af37;
+text-transform:uppercase;
 
 
 
@@ -549,31 +491,35 @@ margin:
 
 
 
-font-family:
-
-Georgia,
-"Times New Roman",
-serif;
-
-
-
 font-size:
 
-clamp(38px,8vw,68px);
+clamp(38px,8vw,65px);
 
 
 
-font-weight:700;
+font-weight:800;
 
 
 
-letter-spacing:
-
--2px;
+letter-spacing:-2px;
 
 
 
-color:#1c160c;
+background:
+
+linear-gradient(
+90deg,
+#fff,
+#d4af37
+);
+
+
+
+-webkit-background-clip:text;
+
+
+
+color:transparent;
 
 
 
@@ -581,35 +527,30 @@ color:#1c160c;
 
 
 
+
 .subtitle {
 
 
-max-width:
-
-600px;
+max-width:600px;
 
 
-
-margin:
-
-auto;
+margin:auto;
 
 
 
 font-size:
 
-clamp(14px,3vw,17px);
+clamp(14px,3vw,18px);
 
 
 
-line-height:
-
-1.8;
+line-height:1.8;
 
 
 
-color:#66563c;
+color:
 
+rgba(255,255,255,.75);
 
 
 }
@@ -617,7 +558,7 @@ color:#66563c;
 
 
 /* =========================
-   TIMER
+   COUNTDOWN
 ========================= */
 
 
@@ -627,34 +568,18 @@ color:#66563c;
 margin-top:35px;
 
 
-
-font-size:
-
-12px;
+font-size:12px;
 
 
-
-letter-spacing:
-
-3px;
+letter-spacing:3px;
 
 
-
-font-weight:700;
-
-
-
-color:#8c6b1f;
-
-
-
-text-transform:
-
-uppercase;
+color:#d4af37;
 
 
 
 }
+
 
 
 
@@ -670,17 +595,15 @@ repeat(4,1fr);
 
 
 
-gap:
-
-15px;
+gap:15px;
 
 
 
 margin-top:20px;
 
 
-
 }
+
 
 
 
@@ -689,27 +612,13 @@ margin-top:20px;
 
 background:
 
-linear-gradient(
-
-145deg,
-
-#fff,
-
-#f7ecd2
-
-);
+rgba(255,255,255,.05);
 
 
 
 border:
 
-1px solid rgba(212,175,55,.5);
-
-
-
-border-radius:
-
-16px;
+1px solid rgba(212,175,55,.4);
 
 
 
@@ -719,9 +628,7 @@ padding:
 
 
 
-box-shadow:
-
-0 10px 25px rgba(80,60,20,.12);
+border-radius:15px;
 
 
 
@@ -735,25 +642,17 @@ box-shadow:
 display:block;
 
 
-
-font-family:
-
-Georgia,
-serif;
-
-
-
 font-size:
 
-clamp(26px,7vw,45px);
+clamp(28px,7vw,45px);
 
 
 
-font-weight:bold;
+font-weight:800;
 
 
 
-color:#1d160a;
+color:#d4af37;
 
 
 
@@ -764,29 +663,13 @@ color:#1d160a;
 .time-label {
 
 
-margin-top:8px;
+font-size:10px;
 
 
-
-font-size:
-
-10px;
+letter-spacing:2px;
 
 
-
-letter-spacing:
-
-2px;
-
-
-
-color:#9b7a35;
-
-
-
-text-transform:
-
-uppercase;
+color:white;
 
 
 
@@ -795,14 +678,160 @@ uppercase;
 
 
 /* =========================
-   WHATSAPP PREMIUM BUTTON
+   TEMPORARY ACCESS
+========================= */
+
+
+.temporary {
+
+
+margin-top:35px;
+
+
+
+padding:
+
+22px;
+
+
+
+border-radius:15px;
+
+
+
+background:
+
+rgba(255,255,255,.04);
+
+
+
+border:
+
+1px solid rgba(255,255,255,.15);
+
+
+
+}
+
+
+
+.temporary h3 {
+
+
+font-size:15px;
+
+
+color:#d4af37;
+
+
+margin-bottom:10px;
+
+
+}
+
+
+
+.temporary p {
+
+
+font-size:13px;
+
+
+line-height:1.6;
+
+
+color:
+
+rgba(255,255,255,.7);
+
+
+}
+
+
+
+.temp-button {
+
+
+display:inline-flex;
+
+
+align-items:center;
+
+
+justify-content:center;
+
+
+
+margin-top:15px;
+
+
+
+padding:
+
+13px 25px;
+
+
+
+border-radius:50px;
+
+
+
+background:
+
+linear-gradient(
+135deg,
+#d4af37,
+#f8e7a2
+);
+
+
+
+color:#111;
+
+
+
+font-weight:700;
+
+
+
+text-decoration:none;
+
+
+
+transition:.3s;
+
+
+
+}
+
+
+
+.temp-button:hover {
+
+
+transform:
+
+translateY(-3px);
+
+
+box-shadow:
+
+0 10px 30px rgba(212,175,55,.35);
+
+
+}
+
+
+
+/* =========================
+   WHATSAPP
 ========================= */
 
 
 .whatsapp-btn {
 
 
-margin-top:35px;
+margin-top:25px;
 
 
 
@@ -816,44 +845,25 @@ align-items:center;
 
 
 
-gap:12px;
+gap:10px;
 
 
 
 padding:
 
-16px 25px;
+15px;
 
 
 
-width:100%;
+background:#25D366;
 
 
 
-max-width:350px;
+color:white;
 
 
 
-margin-left:auto;
-
-
-margin-right:auto;
-
-
-
-background:
-
-#1c1c1c;
-
-
-
-color:#d4af37;
-
-
-
-border-radius:
-
-50px;
+border-radius:50px;
 
 
 
@@ -863,39 +873,6 @@ text-decoration:none;
 
 font-weight:700;
 
-
-
-letter-spacing:.5px;
-
-
-
-border:
-
-1px solid #d4af37;
-
-
-
-transition:.3s;
-
-
-
-}
-
-
-
-.whatsapp-btn:hover {
-
-
-background:#d4af37;
-
-
-color:#1c1c1c;
-
-
-
-transform:
-
-translateY(-3px);
 
 
 }
@@ -912,17 +889,15 @@ translateY(-3px);
 .footer {
 
 
-margin-top:40px;
-
+margin-top:35px;
 
 
 padding-top:20px;
 
 
-
 border-top:
 
-1px solid rgba(212,175,55,.3);
+1px solid rgba(255,255,255,.15);
 
 
 
@@ -933,63 +908,38 @@ border-top:
 .footer-text {
 
 
-font-size:
-
-10px;
+font-size:10px;
 
 
 
-letter-spacing:
+color:
 
-1px;
-
-
-
-color:#8c7650;
+rgba(255,255,255,.45);
 
 
 
 }
-
 
 
 .footer-text a {
 
 
-color:#8c6b1f;
-
+color:#d4af37;
 
 
 text-decoration:none;
 
 
-
 }
 
 
 
 
-/* =========================
-   MOBILE
-========================= */
+
+/* MOBILE */
 
 
 @media(max-width:480px){
-
-
-.maintenance-card {
-
-
-border-radius:18px;
-
-
-padding:
-
-30px 18px;
-
-
-}
-
 
 
 .countdown {
@@ -1013,9 +963,8 @@ padding:
 }
 
 
+
 }
-
-
 
 </style>
 
@@ -1062,7 +1011,7 @@ padding:
 
 <p class="subtitle">
 
-    Website sedang dalam proses pemeliharaan dan peningkatan sistem.
+    Website Yayasan Sahabat Kemanusiaan Nusantara (www.yskn.or.id) sedang dalam proses pemeliharaan dan peningkatan sistem.
     Kami sedang melakukan beberapa pembaruan agar layanan dapat
     kembali berjalan dengan lebih baik dan optimal.
 
@@ -1157,7 +1106,7 @@ padding:
 
     <a
         class="whatsapp-btn"
-        href="https://wa.me/6281234567899"
+        href="https://wa.me/628132220572"
         target="_blank"
         rel="noopener noreferrer">
 
@@ -1166,6 +1115,33 @@ padding:
         Hubungi Admin
 
     </a>
+
+</div>
+<div class="temporary">
+
+<h3>
+<i class="fa-solid fa-link"></i>
+Akses Informasi Sementara
+</h3>
+
+
+<p>
+
+Website utama sedang dalam proses maintenance.
+Untuk sementara, Anda tetap dapat mengakses informasi melalui halaman alternatif berikut.
+
+</p>
+
+
+<a 
+href="https://yskn.vercel.app/"
+target="_blank"
+class="temp-button">
+
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+Buka Halaman Sementara
+
+</a>
 
 </div>
 
@@ -1178,7 +1154,7 @@ padding:
 
         Developed by:         
 		<a
-            href="https://https://wasobi-technology-indonesia.webflow.io/"
+            href="https://wasobi-technology-indonesia.webflow.io/"
             target="_blank"
             rel="noopener noreferrer">
 
@@ -1211,11 +1187,11 @@ padding:
    YYYY-MM-DDTHH:MM:SS
 
    Contoh:
-   2026-10-12T08:00:00
+   2026-12-12T08:00:00
 */
 
 const maintenanceEnd =
-    new Date("2026-10-12T08:00:00").getTime();
+    new Date("2026-12-12T08:00:00").getTime();
 
 
 
